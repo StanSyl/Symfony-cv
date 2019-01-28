@@ -8,3 +8,7 @@
 app_lucky_number:
     path: /lucky/number/{name}/{job}
     controller: App\Controller\LuckyController::number
+    
+app_product_show:
+    path: /lucky/number/{name}/{job}
+    controller: App\Controller\ProductController::show
