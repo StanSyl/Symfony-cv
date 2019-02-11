@@ -13,6 +13,49 @@ app_experience:
     path: /create/experience
     controller: App\Controller\ExperienceController::create
     
-valid_experience:
-    path: /valid/experience
-    controller: App\Controller\ExperienceController::valid
+valid_create_experience:
+    path: /valid/create/experience
+    controller: App\Controller\ExperienceController::valid_create
+    
+edit_experience:
+    path: /edit/experience/{id}
+    controller: App\Controller\ExperienceController::edit
+    
+valid_edit_experience:
+    path: /valid/edit/experience/{id}
+    controller: App\Controller\ExperienceController::valid_edit
+
+
+
+app_formation:
+    path: /create/formation
+    controller: App\Controller\FormationController::create
+    
+valid_create_formation:
+    path: /valid/create/formation
+    controller: App\Controller\FormationController::valid_create
+    
+edit_formation:
+    path: /edit/formation/{id}
+    controller: App\Controller\FormationController::edit
+    
+valid_edit_formation:
+    path: /valid/edit/formation/{id}
+    controller: App\Controller\FormationController::valid_edit
+
+
+app_loisir:
+    path: /create/loisir
+    controller: App\Controller\LoisirController::create
+    
+valid_create_loisir:
+    path: /valid/create/loisir
+    controller: App\Controller\LoisirController::valid_create
+    
+edit_loisir:
+    path: /edit/loisir/{id}
+    controller: App\Controller\LoisirController::edit
+    
+valid_edit_loisir:
+    path: /valid/edit/loisir/{id}
+    controller: App\Controller\LoisirController::valid_edit

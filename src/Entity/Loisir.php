@@ -4,6 +4,8 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Core\Annotation\ApiResource;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * @ApiResource
@@ -11,6 +13,9 @@ use ApiPlatform\Core\Annotation\ApiResource;
  */
 class Loisir
 {
+    
+    
+    
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
@@ -20,11 +25,13 @@ class Loisir
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank
      */
     private $nom;
 
     /**
      * @ORM\Column(type="float")
+     * @Assert\NotBlank
      */
     private $annee;
 

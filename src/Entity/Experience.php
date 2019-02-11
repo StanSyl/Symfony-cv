@@ -4,6 +4,8 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Core\Annotation\ApiResource;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * @ApiResource
@@ -11,6 +13,10 @@ use ApiPlatform\Core\Annotation\ApiResource;
  */
 class Experience
 {
+    
+
+    
+    
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
@@ -20,22 +26,27 @@ class Experience
 
     /**
      * @ORM\Column(type="float")
+     * @Assert\NotBlank
      */
     private $annee;
+    
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank
      */
     private $lieu;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank
      */
     private $nom;
 
     public function getId(): ?int
     {
         return $this->id;
+        
     }
 
     public function getAnnee(): ?float

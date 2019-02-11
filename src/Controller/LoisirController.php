@@ -5,19 +5,18 @@ namespace App\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-use App\Entity\Experience;
-use App\Form\ExperienceType;
+use App\Entity\Loisir;
+use App\Form\LoisirType;
 
 
-class ExperienceController extends Controller
+class LoisirController extends Controller
 {
     public function create()
     {
-        $experience = new Experience();
-        $form = $this->createForm(ExperienceType::class, $experience);
-        
-        return $this->render('experience/create.html.twig',[
-            'entity' => $experience,
+        $loisir = new Loisir();
+        $form = $this->createForm(LoisirType::class, $loisir);
+        return $this->render('loisir/create.html.twig',[
+            'entity' => $loisir,
             'form'=> $form->createView(),
             ]
             
@@ -26,23 +25,23 @@ class ExperienceController extends Controller
     
     public function valid_create(Request $request)
     {
-        $experience = new Experience();
-        $form = $this->createForm(ExperienceType::class, $experience);
+        $loisir = new Loisir();
+        $form = $this->createForm(LoisirType::class, $loisir);
         
         $form->handleRequest($request);
         
         if($form->isSubmitted() && $form->isValid()) {
-            $experience = $form->getData();
+            $loisir = $form->getData();
             
             $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($experience);
+            $entityManager->persist($loisir);
             $entityManager->flush();
             
             return $this->redirectToRoute('app_lucky_number');
         }
         
-        return $this->render('experience/create.html.twig',[
-            'entity' => $experience,
+        return $this->render('loisir/create.html.twig',[
+            'entity' => $loisir,
             'form'=> $form->createView(),
             ]
             
@@ -52,11 +51,11 @@ class ExperienceController extends Controller
     public function edit($id)
     {
      $entityManager = $this->getDoctrine()->getManager();
-     $experience = $entityManager->getRepository(Experience::class)->findOneBy(['id' => $id]);
-     $form = $this->createForm(ExperienceType::class, $experience);
+     $loisir = $entityManager->getRepository(loisir::class)->findOneBy(['id' => $id]);
+     $form = $this->createForm(LoisirType::class, $loisir);
      
-     return $this->render('experience/edit.html.twig', [
-         'entity'=>$experience,
+     return $this->render('loisir/edit.html.twig', [
+         'entity'=>$loisir,
          'form'=>$form->createView(),
          ]
         );
@@ -65,22 +64,22 @@ class ExperienceController extends Controller
     public function valid_edit(Request $request, $id)
     {
         $entityManager = $this->getDoctrine()->getManager();
-        $experience = $entityManager->getRepository(Experience::class)->findOneBy(['id' => $id]);
-        $form = $this->createForm(ExperienceType::class, $experience);
+        $loisir = $entityManager->getRepository(loisir::class)->findOneBy(['id' => $id]);
+        $form = $this->createForm(LoisirType::class, $loisir);
         
         $form->handleRequest($request);
         
         if($form->isSubmitted() && $form->isValid()) {
-            $experience = $form->getData();
+            $loisir = $form->getData();
             
-            $entityManager->persist($experience);
+            $entityManager->persist($loisir);
             $entityManager->flush();
             
             return $this->redirectToRoute('app_lucky_number');
         }
         
-        return $this->render('experience/edit.html.twig',[
-            'entity' => $experience,
+        return $this->render('loisir/edit.html.twig',[
+            'entity' => $loisir,
             'form'=> $form->createView(),
             ]
             

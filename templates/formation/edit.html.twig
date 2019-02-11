@@ -1,0 +1,6 @@
+<!DOCTYPE html>
+<html>
+<h1>Edition d'un nouvelle formation</h1>
+{{ form_start(form, {'action': path('valid_edit_formation',{ id: entity.getId()}) }) }}
+{{ form(form) }}
+</html>

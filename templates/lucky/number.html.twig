@@ -47,15 +47,7 @@
 			John Rambo est un ancien béret vert américain, le dernier survivant d'un commando d'élite formé durant la guerre du Viêt Nam et dirigé par le colonel Samuel Trautman. 
 			Après la guerre du Viêt Nam où il a, entre autres, été capturé et torturé par l'ennemi, John Rambo est de retour aux États-Unis. Il se heurte à l'hostilité de l'Amérique envers les anciens soldats et n'arrive pas à se réinsérer socialement.
 			Alors qu'il rend visite au dernier survivant de ses anciens compagnons d'armes, il apprend la mort de celui-ci des suites d'un cancer. 
-			Reprenant la route, tandis qu'il essaie d'entrer dans une petite ville d'une région montagneuse afin de s'y restaurer, il entre en conflit avec les autorités locales, conflit qui se soldera par l'arrestation de Rambo qui est condamné aux travaux forcés.
-			Quelques années plus tard, Rambo est libéré par Trautman pour réaliser une mission d'exploration dans un camp vietnamien. 
-			À la suite de la découverte de prisonniers américains et d'une tentative de libération de l'un d'entre eux, Rambo est abandonné sur place par les responsables de la mission. Il s'échappera.
-			Il se réfugie en Thaïlande où, quelque temps plus tard, il est contacté par Trautman pour participer à une mission en Afghanistan, en pleine guerre avec l'URSS. 
-			Rambo refuse la mission. À la suite de la capture du colonel, il change d'avis et part libérer son ami, aidant au passage les moudjahidins dans leur combat contre les Soviétiques.
-			De retour en Thaïlande, Rambo y vieillit tranquillement : il capture des serpents venimeux qu'il vend ensuite, en plus de tenir une boutique de forge. 
-			Il est engagé par un groupe de missionnaires chrétiens américains désirant remonter la rivière pour se rendre en Birmanie où sévit un génocide. 
-			À la suite de la disparition des missionnaires, un groupe de mercenaires est engagé pour les récupérer. 
-			Rambo s'y joindra en devenant le leader et lance une offensive contre l'armée birmane qui détient les missionnaires. Après cette dernière mission, John Rambo retourne aux États-Unis.</div>
+			Reprenant la route, tandis qu'il essaie d'entrer dans une petite ville d'une région montagneuse afin de s'y restaurer, il entre en conflit avec les autorités locales.</div>
 			</p>
 	</article>
 	<div class="clear"></div>
@@ -71,12 +63,16 @@
 	
 	<div class="sectionContent">
 	<p>
+	<a href="{{ path('app_experience') }}">Nouvelles expériences</a>
+	</br>
+	</br>
 	{% for experience in experiences %}
 			{{ experience.getNom() }}
 			||
 			{{ experience.getAnnee() }}
 			||
 			{{ experience.getLieu() }}
+			<a href="{{ path('edit_experience', {'id': experience.getId()}) }}">Modifier</a> 
 			</br>
 	{% endfor %}
 	</p>	
@@ -92,10 +88,14 @@
 	
 	<div class="sectionContent">
 	<p>
+	<a href="{{ path('app_loisir') }}">Nouveaux loisir</a>
+	</br>
+	</br>
 	{% for loisir in loisirs %}
 			{{ loisir.getNom() }}
 			||
 			{{ loisir.getAnnee() }}
+			<a href="{{ path('edit_loisir', {'id': loisir.getId()}) }}">Modifier</a> 
 			</br>
 	{% endfor %}
 		</p>
@@ -113,12 +113,16 @@
 	<div class="sectionContent">
 		
 		<p>
+		<a href="{{ path('app_formation') }}">Nouvelles formations</a>
+		</br>
+		</br>
 	    {% for formation in formations %}
 			{{ formation.getNom() }}
 			||
 			{{ formation.getAnnee() }}
 			||
 			{{ formation.getLieu() }}
+			<a href="{{ path('edit_formation', {'id': formation.getId()}) }}">Modifier</a> 
 			</br>
 			
 		{% endfor %}
@@ -133,11 +137,32 @@
 	<div class="clear"></div>
 	
 	
-https://symfony-daft.c9users.io/my_cv/public/index.php/api/experiences
-https://symfony-daft.c9users.io/my_cv/public/index.php/api/formations
-https://symfony-daft.c9users.io/my_cv/public/index.php/api/loisirs
+
 
 </section>
+
+<section>
+	<div class="sectionTitle">
+		<h1>API</h1>
+	</div>
+	
+	<div class="sectionContent">
+		
+		<p>
+https://symfony-daft.c9users.io/my_cv/public/index.php/api/experiences </br>
+https://symfony-daft.c9users.io/my_cv/public/index.php/api/formations </br>
+https://symfony-daft.c9users.io/my_cv/public/index.php/api/loisirs </br>
+		</p>
+		
+		
+
+	</div>
+	<div class="clear"></div>
+	
+</section>
+
+
+
 
 </div>
 </div>
