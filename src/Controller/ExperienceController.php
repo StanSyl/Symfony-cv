@@ -88,5 +88,17 @@ class ExperienceController extends Controller
     }
     
     
+    public function delete_experience($id)
+    {
+        $entityManager = $this->getDoctrine()->getManager();
+        $experience = $entityManager->getRepository(Experience::class)->findOneBy(['id' => $id]);
+        $entityManager->remove($experience);
+        $entityManager->flush();
+    
+        return $this->redirectToRoute('app_lucky_number');
+    }
+    
+    
+    
 }
 

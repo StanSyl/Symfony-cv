@@ -41,6 +41,13 @@ class LuckyController extends Controller
         ));
         
     }
+
+
+    public function connect()
+    {
+    return $this->redirectToRoute('app_lucky_number');
+        
+    }
     
     
     

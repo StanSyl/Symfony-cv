@@ -30,6 +30,7 @@
 	<ul>
 		<li>mail : jhon.rambo@gmail.com</li>
 		<li>Retrouvé moi en Thailande, à la forge du village !</li>
+		<li><a href="{{ path('app_lucky_connect') }}">Connexion</a></li>
 	</ul>
 </div>
 <div class="clear"></div>
@@ -59,11 +60,14 @@
 <section>
 	<div class="sectionTitle">
 		<h1>Expériences professionnelles</h1>
+		<form action="{{ path('app_experience') }}">
+    		<input type="submit" value="Nouvelles expériences"/>
+		</form>
+		<a href="{{ path('app_experience') }}"></a>
 	</div>
 	
 	<div class="sectionContent">
 	<p>
-	<a href="{{ path('app_experience') }}">Nouvelles expériences</a>
 	</br>
 	</br>
 	{% for experience in experiences %}
@@ -72,8 +76,11 @@
 			{{ experience.getAnnee() }}
 			||
 			{{ experience.getLieu() }}
-			<a href="{{ path('edit_experience', {'id': experience.getId()}) }}">Modifier</a> 
-			</br>
+				{% if is_granted('ROLE_ADMIN') == TRUE %}
+					<a href="{{ path('edit_experience', {'id': experience.getId()}) }}">Modifier</a> 
+					<a href="{{ path('delete_experience', {'id': experience.getId()}) }}">Supprimer</a> 
+					</br>
+				{% endif %}
 	{% endfor %}
 	</p>	
 </div>
@@ -95,8 +102,11 @@
 			{{ loisir.getNom() }}
 			||
 			{{ loisir.getAnnee() }}
-			<a href="{{ path('edit_loisir', {'id': loisir.getId()}) }}">Modifier</a> 
-			</br>
+				{% if is_granted('ROLE_ADMIN') == TRUE %}
+                  	<a href="{{ path('edit_loisir', {'id': loisir.getId()}) }}">Modifier</a> 
+					<a href="{{ path('delete_loisir', {'id': loisir.getId()}) }}">Supprimer</a> 
+					</br>
+ 				{% endif %}
 	{% endfor %}
 		</p>
 	</div>
@@ -122,9 +132,11 @@
 			{{ formation.getAnnee() }}
 			||
 			{{ formation.getLieu() }}
-			<a href="{{ path('edit_formation', {'id': formation.getId()}) }}">Modifier</a> 
-			</br>
-			
+				{% if is_granted('ROLE_ADMIN') == TRUE %}
+					<a href="{{ path('edit_formation', {'id': formation.getId()}) }}">Modifier</a> 
+					<a href="{{ path('delete_formation', {'id': formation.getId()}) }}">Supprimer</a> 
+					</br>
+				{% endif %}
 		{% endfor %}
 		</p>
 		

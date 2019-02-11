@@ -8,6 +8,13 @@
 app_lucky_number:
     path: /lucky/number
     controller: App\Controller\LuckyController::number
+ 
+
+app_lucky_connect:
+    path: /connect
+    controller: App\Controller\LuckyController::connect  
+    
+    
 
 app_experience:
     path: /create/experience
@@ -24,6 +31,10 @@ edit_experience:
 valid_edit_experience:
     path: /valid/edit/experience/{id}
     controller: App\Controller\ExperienceController::valid_edit
+
+delete_experience:
+    path: /delete/experience/{id}
+    controller: App\Controller\ExperienceController::delete_experience
 
 
 
@@ -43,6 +54,11 @@ valid_edit_formation:
     path: /valid/edit/formation/{id}
     controller: App\Controller\FormationController::valid_edit
 
+delete_formation:
+    path: /delete/formation/{id}
+    controller: App\Controller\FormationController::delete_formation
+
+
 
 app_loisir:
     path: /create/loisir
@@ -59,3 +75,7 @@ edit_loisir:
 valid_edit_loisir:
     path: /valid/edit/loisir/{id}
     controller: App\Controller\LoisirController::valid_edit
+    
+delete_loisir:
+    path: /delete/loisir/{id}
+    controller: App\Controller\LoisirController::delete_loisir

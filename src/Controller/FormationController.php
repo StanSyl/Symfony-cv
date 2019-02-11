@@ -87,6 +87,16 @@ class FormationController extends Controller
         );
     }
     
+    public function delete_formation($id)
+    {
+        $entityManager = $this->getDoctrine()->getManager();
+        $formation = $entityManager->getRepository(Formation::class)->findOneBy(['id' => $id]);
+        $entityManager->remove($formation);
+        $entityManager->flush();
+    
+        return $this->redirectToRoute('app_lucky_number');
+    }
+    
     
 }
 
