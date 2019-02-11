@@ -20,6 +20,7 @@ p {
 	line-height: 1.4em;
 	margin-bottom: 20px;
 	color: #444;
+	text-align: justify;
 }
 
 #cv {
@@ -59,10 +60,10 @@ p {
 }
 
 #headshot img {
-	width: 100%;
+	width: 120%;
 	height: auto;
-	-webkit-border-radius: 50px;
-	border-radius: 50px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
 }
 
 #name {

@@ -5,17 +5,45 @@ namespace App\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
+use App\Entity\Experience;
+use App\Entity\Formation;
+use App\Entity\Loisir;
+
+
 class LuckyController extends Controller
 {
-    public function number($name, $job)
+    public function number()
     {
         $number = random_int(0, 100);
+        
+        $forma = $this->getDoctrine()
+        ->getRepository(Formation::class)
+        ->findAll();
+        
+        $exp = $this->getDoctrine()
+        ->getRepository(Experience::class)
+        ->findAll();
+        
+        $loi = $this->getDoctrine()
+        ->getRepository(Loisir::class)
+        ->findAll();
+        
 
+            
         return $this->render('lucky/number.html.twig', array(
             'number' => $number,
-            'name' => $name,
-            'job' => $job,
+            'name' => 'Jhon RAMBO',
+            'job' => 'Soldat Expérimenté',
+            'formations' => $forma,
+            'experiences' => $exp,
+            'loisirs' => $loi,
+
         ));
+        
     }
+    
+    
+    
+
 }
 

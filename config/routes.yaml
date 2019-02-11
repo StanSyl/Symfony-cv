@@ -6,9 +6,13 @@
 #    defaults: { _controller: 'App\Controller\DefaultController::index' }
 
 app_lucky_number:
-    path: /lucky/number/{name}/{job}
+    path: /lucky/number
     controller: App\Controller\LuckyController::number
+
+app_experience:
+    path: /create/experience
+    controller: App\Controller\ExperienceController::create
     
-app_product_show:
-    path: /lucky/number/{name}/{job}
-    controller: App\Controller\ProductController::show
+valid_experience:
+    path: /valid/experience
+    controller: App\Controller\ExperienceController::valid

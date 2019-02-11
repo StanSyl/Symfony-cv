@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Joe Bloggs - Curriculum Vitae</title>
+<title>Jhon RAMBO</title>
 
 <meta name="viewport" content="width=device-width"/>
 <meta name="description" content="The Curriculum Vitae of Joe Bloggs."/>
@@ -16,95 +16,130 @@
 </head>
 <body id="top">
 <div id="cv" class="instaFade">
-	<div class="mainDetails">
-		<div id="headshot" class="quickFade">
-			<img src="{{ asset ('headshot.jpg')}}" alt="Alan Smith" />
+<div class="mainDetails">
+<div id="headshot" class="quickFade">
+	<img src="{{ asset ('headshot1.jpg')}}" alt="JB" />
+</div>
+
+<div id="name">
+	<h1 class="quickFade delayTwo">{{ name|upper }}</h1>
+	<h2 class="quickFade delayThree">{{job}}</h2>
+</div>
+
+<div id="contactDetails" class="quickFade delayFour">
+	<ul>
+		<li>mail : jhon.rambo@gmail.com</li>
+		<li>Retrouvé moi en Thailande, à la forge du village !</li>
+	</ul>
+</div>
+<div class="clear"></div>
+</div>
+
+<div id="mainArea" class="quickFade delayFive">
+<section>
+	<article>
+		<div class="sectionTitle">
+			<h1>Présentation</h1>
 		</div>
 		
-		<div id="name">
-			<h1 class="quickFade delayTwo">{{ name|upper }}</h1>
-			<h2 class="quickFade delayThree">{{job}}</h2>
-		</div>
-		
-		<div id="contactDetails" class="quickFade delayFour">
-			<ul>
-				<li>e: <a href="mailto:joe@bloggs.com" target="_blank">joe@bloggs.com</a></li>
-				<li>w: <a href="http://www.bloggs.com">www.bloggs.com</a></li>
-				<li>m: 01234567890</li>
-			</ul>
-		</div>
-		<div class="clear"></div>
+		<div class="sectionContent">
+			<p>
+			John Rambo est un ancien béret vert américain, le dernier survivant d'un commando d'élite formé durant la guerre du Viêt Nam et dirigé par le colonel Samuel Trautman. 
+			Après la guerre du Viêt Nam où il a, entre autres, été capturé et torturé par l'ennemi, John Rambo est de retour aux États-Unis. Il se heurte à l'hostilité de l'Amérique envers les anciens soldats et n'arrive pas à se réinsérer socialement.
+			Alors qu'il rend visite au dernier survivant de ses anciens compagnons d'armes, il apprend la mort de celui-ci des suites d'un cancer. 
+			Reprenant la route, tandis qu'il essaie d'entrer dans une petite ville d'une région montagneuse afin de s'y restaurer, il entre en conflit avec les autorités locales, conflit qui se soldera par l'arrestation de Rambo qui est condamné aux travaux forcés.
+			Quelques années plus tard, Rambo est libéré par Trautman pour réaliser une mission d'exploration dans un camp vietnamien. 
+			À la suite de la découverte de prisonniers américains et d'une tentative de libération de l'un d'entre eux, Rambo est abandonné sur place par les responsables de la mission. Il s'échappera.
+			Il se réfugie en Thaïlande où, quelque temps plus tard, il est contacté par Trautman pour participer à une mission en Afghanistan, en pleine guerre avec l'URSS. 
+			Rambo refuse la mission. À la suite de la capture du colonel, il change d'avis et part libérer son ami, aidant au passage les moudjahidins dans leur combat contre les Soviétiques.
+			De retour en Thaïlande, Rambo y vieillit tranquillement : il capture des serpents venimeux qu'il vend ensuite, en plus de tenir une boutique de forge. 
+			Il est engagé par un groupe de missionnaires chrétiens américains désirant remonter la rivière pour se rendre en Birmanie où sévit un génocide. 
+			À la suite de la disparition des missionnaires, un groupe de mercenaires est engagé pour les récupérer. 
+			Rambo s'y joindra en devenant le leader et lance une offensive contre l'armée birmane qui détient les missionnaires. Après cette dernière mission, John Rambo retourne aux États-Unis.</div>
+			</p>
+	</article>
+	<div class="clear"></div>
+</section>
+
+
+
+
+<section>
+	<div class="sectionTitle">
+		<h1>Expériences professionnelles</h1>
 	</div>
 	
-	<div id="mainArea" class="quickFade delayFive">
-		<section>
-			<article>
-				<div class="sectionTitle">
-					<h1>Personal Profile</h1>
-				</div>
-				
-				<div class="sectionContent">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dolor metus, interdum at scelerisque in, porta at lacus. Maecenas dapibus luctus cursus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies massa et erat luctus hendrerit. Curabitur non consequat enim. Vestibulum bibendum mattis dignissim. Proin id sapien quis libero interdum porttitor.</p>
-				</div>
-			</article>
-			<div class="clear"></div>
-		</section>
-		
-		
-		<section>
-			<div class="sectionTitle">
-				<h1>Work Experience</h1>
-			</div>
-			
-			<div class="sectionContent">
-			{% for i in 0..1%}
-				<article>
-					<h2>Job Title at Company</h2>
-					<p class="subDetails">April 2011 - Present</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies massa et erat luctus hendrerit. Curabitur non consequat enim. Vestibulum bibendum mattis dignissim. Proin id sapien quis libero interdum porttitor.</p>
-				</article>
-            {% endfor %}
+	<div class="sectionContent">
+	<p>
+	{% for experience in experiences %}
+			{{ experience.getNom() }}
+			||
+			{{ experience.getAnnee() }}
+			||
+			{{ experience.getLieu() }}
+			</br>
+	{% endfor %}
+	</p>	
+</div>
+	<div class="clear"></div>
+</section>
 
-			</div>
-			<div class="clear"></div>
-		</section>
-		
-		
-		<section>
-			<div class="sectionTitle">
-				<h1>Key Skills</h1>
-			</div>
-			
-			<div class="sectionContent">
-				<ul class="keySkills">
-				    {% for i in 0..7%}
-					<li>A Key Skill</li>
-					{% endfor %}
-				</ul>
-			</div>
-			<div class="clear"></div>
-		</section>
-		
-		
-		<section>
-			<div class="sectionTitle">
-				<h1>Education</h1>
-			</div>
-			
-			<div class="sectionContent">
-			    {% for i in 0..1%}
-				<article>
-					<h2>College/University</h2>
-					<p class="subDetails">Qualification</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies massa et erat luctus hendrerit. Curabitur non consequat enim.</p>
-				</article>
-				{% endfor %}
 
-			</div>
-			<div class="clear"></div>
-		</section>
-		
+<section>
+	<div class="sectionTitle">
+		<h1>Loisirs</h1>
 	</div>
+	
+	<div class="sectionContent">
+	<p>
+	{% for loisir in loisirs %}
+			{{ loisir.getNom() }}
+			||
+			{{ loisir.getAnnee() }}
+			</br>
+	{% endfor %}
+		</p>
+	</div>
+	
+	<div class="clear"></div>
+</section>
+
+
+<section>
+	<div class="sectionTitle">
+		<h1>Formation</h1>
+	</div>
+	
+	<div class="sectionContent">
+		
+		<p>
+	    {% for formation in formations %}
+			{{ formation.getNom() }}
+			||
+			{{ formation.getAnnee() }}
+			||
+			{{ formation.getLieu() }}
+			</br>
+			
+		{% endfor %}
+		</p>
+		
+		
+		
+		
+
+
+	</div>
+	<div class="clear"></div>
+	
+	
+https://symfony-daft.c9users.io/my_cv/public/index.php/api/experiences
+https://symfony-daft.c9users.io/my_cv/public/index.php/api/formations
+https://symfony-daft.c9users.io/my_cv/public/index.php/api/loisirs
+
+</section>
+
+</div>
 </div>
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
