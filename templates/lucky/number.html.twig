@@ -8,13 +8,34 @@
 <meta charset="UTF-8"> 
 
 <link type="text/css" rel="stylesheet" href="{{ asset('style.css') }}">
+<link type="text/css" rel="stylesheet" href="{{ asset('mycss.css') }}">
 <link href='http://fonts.googleapis.com/css?family=Rokkitt:400,700|Lato:400,300' rel='stylesheet' type='text/css'>
-
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <!--[if lt IE 9]>
 <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 </head>
-<body id="top">
+<body>
+	
+	
+<nav id="menu">
+<ul>
+	<li><b>Accueil</b></li>
+	<li><b>Présentation</b></li>
+	<li><b>Expériences professionnelles</b></li>
+	<li><b>Loisirs</b></li>
+	<li><b>Formation</b></li>
+	<li><b>Api</b></li>
+	<li><b>Contact</b></li>
+</ul>
+</nav>
+
+
+
+
+
+
+
 <div id="cv" class="instaFade">
 <div class="mainDetails">
 <div id="headshot" class="quickFade">
@@ -60,10 +81,11 @@
 <section>
 	<div class="sectionTitle">
 		<h1>Expériences professionnelles</h1>
+		{% if is_granted('ROLE_ADMIN') == TRUE %}
 		<form action="{{ path('app_experience') }}">
     		<input type="submit" value="Nouvelles expériences"/>
 		</form>
-		<a href="{{ path('app_experience') }}"></a>
+		{% endif %}
 	</div>
 	
 	<div class="sectionContent">
@@ -91,13 +113,14 @@
 <section>
 	<div class="sectionTitle">
 		<h1>Loisirs</h1>
+		{% if is_granted('ROLE_ADMIN') == TRUE %}
+		<form action="{{ path('app_loisir') }}">
+    		<input type="submit" value="Nouveux loisir"/>
+		</form>
+		{% endif %}
 	</div>
-	
 	<div class="sectionContent">
 	<p>
-	<a href="{{ path('app_loisir') }}">Nouveaux loisir</a>
-	</br>
-	</br>
 	{% for loisir in loisirs %}
 			{{ loisir.getNom() }}
 			||
@@ -118,14 +141,16 @@
 <section>
 	<div class="sectionTitle">
 		<h1>Formation</h1>
+		{% if is_granted('ROLE_ADMIN') == TRUE %}
+		<form action="{{ path('app_formation') }}">
+    		<input type="submit" value="Nouvelles formations"/>
+		</form>
+		{% endif %}
 	</div>
 	
 	<div class="sectionContent">
 		
 		<p>
-		<a href="{{ path('app_formation') }}">Nouvelles formations</a>
-		</br>
-		</br>
 	    {% for formation in formations %}
 			{{ formation.getNom() }}
 			||
@@ -173,7 +198,22 @@ https://symfony-daft.c9users.io/my_cv/public/index.php/api/loisirs </br>
 	
 </section>
 
+<section>
+	<div class="sectionTitle">
+		<h1>Contact</h1>
+	</div>
+	
+	<div class="sectionContent">
+		
+		<form action="{{ path('app_contact') }}">
+    		<input type="submit" value="Me contacter"/>
+		</form>
+		
 
+	</div>
+	<div class="clear"></div>
+	
+</section>
 
 
 </div>

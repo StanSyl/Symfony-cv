@@ -16,7 +16,8 @@
         "symfony/orm-pack": "^1.0",
         "symfony/twig-bundle": "3.4.*",
         "symfony/validator": "3.4.*",
-        "symfony/yaml": "3.4.*"
+        "symfony/yaml": "3.4.*",
+        "twbs/bootstrap": "^4.2"
     },
     "config": {
         "preferred-install": {
@@ -63,6 +64,7 @@
         }
     },
     "require-dev": {
+        "escapestudios/symfony2-coding-standard": "3.x-dev",
         "symfony/maker-bundle": "^1.11"
     }
 }

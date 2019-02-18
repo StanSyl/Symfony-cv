@@ -79,3 +79,15 @@ valid_edit_loisir:
 delete_loisir:
     path: /delete/loisir/{id}
     controller: App\Controller\LoisirController::delete_loisir
+    
+    
+    
+
+app_contact:
+    path: /create/contact
+    controller: App\Controller\ContactController::create
+    
+valid_create_contact:
+    path: /valid/create/contact
+    controller: App\Controller\ContactController::validCreate
+    
