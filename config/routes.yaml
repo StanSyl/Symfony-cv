@@ -22,7 +22,7 @@ app_experience:
     
 valid_create_experience:
     path: /valid/create/experience
-    controller: App\Controller\ExperienceController::valid_create
+    controller: App\Controller\ExperienceController::validCreate
     
 edit_experience:
     path: /edit/experience/{id}
@@ -30,11 +30,11 @@ edit_experience:
     
 valid_edit_experience:
     path: /valid/edit/experience/{id}
-    controller: App\Controller\ExperienceController::valid_edit
+    controller: App\Controller\ExperienceController::validEdit
 
 delete_experience:
     path: /delete/experience/{id}
-    controller: App\Controller\ExperienceController::delete_experience
+    controller: App\Controller\ExperienceController::deleteExperience
 
 
 
@@ -44,7 +44,7 @@ app_formation:
     
 valid_create_formation:
     path: /valid/create/formation
-    controller: App\Controller\FormationController::valid_create
+    controller: App\Controller\FormationController::validCreate
     
 edit_formation:
     path: /edit/formation/{id}
@@ -52,11 +52,11 @@ edit_formation:
     
 valid_edit_formation:
     path: /valid/edit/formation/{id}
-    controller: App\Controller\FormationController::valid_edit
+    controller: App\Controller\FormationController::validEdit
 
 delete_formation:
     path: /delete/formation/{id}
-    controller: App\Controller\FormationController::delete_formation
+    controller: App\Controller\FormationController::deleteFormation
 
 
 
@@ -66,7 +66,7 @@ app_loisir:
     
 valid_create_loisir:
     path: /valid/create/loisir
-    controller: App\Controller\LoisirController::valid_create
+    controller: App\Controller\LoisirController::validCreate
     
 edit_loisir:
     path: /edit/loisir/{id}
@@ -74,11 +74,11 @@ edit_loisir:
     
 valid_edit_loisir:
     path: /valid/edit/loisir/{id}
-    controller: App\Controller\LoisirController::valid_edit
+    controller: App\Controller\LoisirController::validEdit
     
 delete_loisir:
     path: /delete/loisir/{id}
-    controller: App\Controller\LoisirController::delete_loisir
+    controller: App\Controller\LoisirController::deleteLoisir
     
     
     

@@ -6,16 +6,12 @@ use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Core\Annotation\ApiResource;
 use Symfony\Component\Validator\Constraints as Assert;
 
-
 /**
  * @ApiResource
  * @ORM\Entity(repositoryClass="App\Repository\FormationRepository")
  */
 class Formation
 {
-    
-
-    
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()

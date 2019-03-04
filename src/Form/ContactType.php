@@ -16,9 +16,8 @@ class ContactType extends AbstractType
             ->add('message')
             ->add('nom')
             ->add('save', SubmitType::class, [
-            'attr'=>['class'=>'save']
+            'attr' => ['class' => 'save'],
             ]);
-        ;
     }
 
     public function configureOptions(OptionsResolver $resolver)

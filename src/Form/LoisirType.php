@@ -16,9 +16,8 @@ class LoisirType extends AbstractType
             ->add('nom')
             ->add('annee')
             ->add('save', SubmitType::class, [
-            'attr'=>['class'=>'save']
+            'attr' => ['class' => 'save'],
             ]);
-        ;
     }
 
     public function configureOptions(OptionsResolver $resolver)

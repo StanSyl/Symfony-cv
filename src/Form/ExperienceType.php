@@ -17,9 +17,8 @@ class ExperienceType extends AbstractType
             ->add('lieu')
             ->add('nom')
             ->add('save', SubmitType::class, [
-            'attr'=>['class'=>'save']
+            'attr' => ['class' => 'save'],
             ]);
-        ;
     }
 
     public function configureOptions(OptionsResolver $resolver)
