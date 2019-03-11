@@ -2,7 +2,7 @@
 
 Bonjour, vous êtes sur le projet 'CV Symfony'. Vous trouverez dans celui-ci tout le necessaire pour créer votre propre CV. Ce projet a été réalisé dans le cadre du module Symfony à l'IUT MMI de Grenoble.
 
-## Fonctionnalité
+## Fonctionnalités
 
 Le bouton connection vous permet d'acceder au fonction d'édition. Vous pouvez ajouter, éditer ou supprimer une activité, une expériences professionnelles ou une formation. Des boutons et le menu sont prévus à cet effet. 
 Une section contact permet également au visiteur de vous envoyer un message en base.
@@ -52,12 +52,12 @@ php ./vendor/bin/codecept run acceptance
 * JavaScript- Pour quelques fonctions.
 
 
-## Auteurs
+## Auteur
 
 * **Sylvain STANIK** - *En étude MMI*
 
 
-## License
+## Licence
 
 Pas de licence ici, le projet est libre (Comme Rambo...).
 
