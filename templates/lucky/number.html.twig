@@ -20,12 +20,13 @@
 	
 <nav id="menu">
 <ul>
-	<li><b><a class="Pre">Présentation</a></b></li>
-	<li><b>Expériences professionnelles</b></li>
-	<li><b>Loisirs</b></li>
-	<li><b>Formation</b></li>
-	<li><b>Api</b></li>
-	<li><b>Contact</b></li>
+	<li><b id="pre" onmouseenter='changecoul()' onmouseleave='back()'><a>Présentation</a></b></li>
+	<li><b id="exp" onmouseenter='changecoul2()' onmouseleave='back2()'>Expériences professionnelles</b></li>
+	<li><b id="loi" onmouseenter='changecoul3()' onmouseleave='back3()'>Loisirs</b></li>
+	<li><b id="form" onmouseenter='changecoul4()' onmouseleave='back4()'>Formation</b></li>
+	<li><b id="api" onmouseenter='changecoul5()' onmouseleave='back5()'>Api</b></li>
+	<li><b id="cont" onmouseenter='changecoul6()' onmouseleave='back6()'>Contact</b></li>
+	<li><b><a href="{{ path('app_lucky_connect') }}" id="co">Connexion</a></b></li>
 </ul>
 </nav>
 
@@ -50,7 +51,6 @@
 	<ul>
 		<li>mail : jhon.rambo@gmail.com</li>
 		<li>Retrouvé moi en Thailande, à la forge du village !</li>
-		<li><a href="{{ path('app_lucky_connect') }}">Connexion</a></li>
 	</ul>
 </div>
 <div class="clear"></div>
@@ -60,7 +60,7 @@
 <section>
 	<article>
 		<div class="sectionTitle">
-			<h1 class="Pre">Présentation</h1>
+			<h1 id="pre1" onmouseenter='changecoul()' onmouseleave='back()'>Présentation</h1>
 		</div>
 		
 		<div class="sectionContent">
@@ -79,10 +79,10 @@
 
 <section>
 	<div class="sectionTitle">
-		<h1>Expériences professionnelles</h1>
+		<h1 id="exp1" onmouseenter='changecoul2()' onmouseleave='back2()'>Expériences professionnelles</h1>
 		{% if is_granted('ROLE_ADMIN') == TRUE %}
 		<form action="{{ path('app_experience') }}">
-    		<input type="submit" value="Nouvelles expériences"/>
+    		<input type="submit" value="Nouvelle expérience"/>
 		</form>
 		{% endif %}
 	</div>
@@ -97,9 +97,10 @@
 			{{ experience.getAnnee() }}
 			||
 			{{ experience.getLieu() }}
+			||
 				{% if is_granted('ROLE_ADMIN') == TRUE %}
-					<a href="{{ path('edit_experience', {'id': experience.getId()}) }}">Modifier</a> 
-					<a href="{{ path('delete_experience', {'id': experience.getId()}) }}">Supprimer</a> 
+					<b><a href="{{ path('edit_experience', {'id': experience.getId()}) }}">Modifier</a></b>
+					<b><a href="{{ path('delete_experience', {'id': experience.getId()}) }}">Supprimer</a></b>
 					</br>
 				{% endif %}
 	{% endfor %}
@@ -111,10 +112,10 @@
 
 <section>
 	<div class="sectionTitle">
-		<h1>Loisirs</h1>
+		<h1 id="loi1" onmouseenter='changecoul3()' onmouseleave='back3()'>Loisirs</h1>
 		{% if is_granted('ROLE_ADMIN') == TRUE %}
 		<form action="{{ path('app_loisir') }}">
-    		<input type="submit" value="Nouveux loisir"/>
+    		<input type="submit" value="Nouveau loisir"/>
 		</form>
 		{% endif %}
 	</div>
@@ -124,9 +125,10 @@
 			{{ loisir.getNom() }}
 			||
 			{{ loisir.getAnnee() }}
+			||
 				{% if is_granted('ROLE_ADMIN') == TRUE %}
-                  	<a href="{{ path('edit_loisir', {'id': loisir.getId()}) }}">Modifier</a> 
-					<a href="{{ path('delete_loisir', {'id': loisir.getId()}) }}">Supprimer</a> 
+                  	<b><a href="{{ path('edit_loisir', {'id': loisir.getId()}) }}">Modifier</a></b> 
+					<b><a href="{{ path('delete_loisir', {'id': loisir.getId()}) }}">Supprimer</a></b> 
 					</br>
  				{% endif %}
 	{% endfor %}
@@ -139,10 +141,10 @@
 
 <section>
 	<div class="sectionTitle">
-		<h1>Formation</h1>
+		<h1 id="form1" onmouseenter='changecoul4()' onmouseleave='back4()'>Formation</h1>
 		{% if is_granted('ROLE_ADMIN') == TRUE %}
 		<form action="{{ path('app_formation') }}">
-    		<input type="submit" value="Nouvelles formations"/>
+    		<input type="submit" value="Nouvelle formation"/>
 		</form>
 		{% endif %}
 	</div>
@@ -156,9 +158,10 @@
 			{{ formation.getAnnee() }}
 			||
 			{{ formation.getLieu() }}
+			||
 				{% if is_granted('ROLE_ADMIN') == TRUE %}
-					<a href="{{ path('edit_formation', {'id': formation.getId()}) }}">Modifier</a> 
-					<a href="{{ path('delete_formation', {'id': formation.getId()}) }}">Supprimer</a> 
+					<b><a href="{{ path('edit_formation', {'id': formation.getId()}) }}">Modifier</a></b> 
+					<b><a href="{{ path('delete_formation', {'id': formation.getId()}) }}">Supprimer</a> </b>
 					</br>
 				{% endif %}
 		{% endfor %}
@@ -179,7 +182,7 @@
 
 <section>
 	<div class="sectionTitle">
-		<h1>API</h1>
+		<h1 id="api1" onmouseenter='changecoul5()' onmouseleave='back5()'>API</h1>
 	</div>
 	
 	<div class="sectionContent">
@@ -199,7 +202,7 @@ https://symfony-daft.c9users.io/my_cv/public/index.php/api/loisirs </br>
 
 <section>
 	<div class="sectionTitle">
-		<h1>Contact</h1>
+		<h1 id="cont1" onmouseenter='changecoul6()' onmouseleave='back6()'>Contact</h1>
 	</div>
 	
 	<div class="sectionContent">
@@ -225,6 +228,76 @@ document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.
 var pageTracker = _gat._getTracker("UA-3753241-1");
 pageTracker._initData();
 pageTracker._trackPageview();
+</script>
+
+
+
+
+<script type="text/javascript">
+function changecoul(){
+document.getElementById('pre').style.backgroundColor = "#298A08";
+document.getElementById('pre1').style.textDecoration = "underline #298A08";
+}
+
+function changecoul2(){
+document.getElementById('exp').style.backgroundColor = "#298A08";
+document.getElementById('exp1').style.textDecoration = "underline #298A08";
+}
+
+function changecoul3(){
+document.getElementById('loi').style.backgroundColor = "#298A08";
+document.getElementById('loi1').style.textDecoration = "underline #298A08";
+}
+
+function changecoul4(){
+document.getElementById('form').style.backgroundColor = "#298A08";
+document.getElementById('form1').style.textDecoration = "underline #298A08";
+}
+
+function changecoul5(){
+document.getElementById('api').style.backgroundColor = "#298A08";
+document.getElementById('api1').style.textDecoration = "underline #298A08";
+}
+
+function changecoul6(){
+document.getElementById('cont').style.backgroundColor = "#298A08";
+document.getElementById('cont1').style.textDecoration = "underline #298A08";
+}
+
+
+
+
+function back(){
+document.getElementById('pre').style.backgroundColor = "white";
+document.getElementById('pre1').style.textDecoration = "none";
+}
+
+function back2(){
+document.getElementById('exp').style.backgroundColor = "white";
+document.getElementById('exp1').style.textDecoration = "none";
+}
+
+function back3(){
+document.getElementById('loi').style.backgroundColor = "white";
+document.getElementById('loi1').style.textDecoration = "none";
+}
+
+function back4(){
+document.getElementById('form').style.backgroundColor = "white";
+document.getElementById('form1').style.textDecoration = "none";
+}
+
+function back5(){
+document.getElementById('api').style.backgroundColor = "white";
+document.getElementById('api1').style.textDecoration = "none";
+}
+
+function back6(){
+document.getElementById('cont').style.backgroundColor = "white";
+document.getElementById('cont1').style.textDecoration = "none";
+}
+
+
 </script>
 
 

@@ -8,8 +8,20 @@ display: inline;
 margin-right: 1em;
 }
 
-
-.Pre:hover{
-color:red;
+a{
+color:black !important;
 }
 
+a:hover{
+color:black !important;
+text-decoration: none !important;
+}
+
+#co{
+color:red !important;
+}
+
+#co:hover{
+color:red !important;
+text-decoration: underline !important;
+}

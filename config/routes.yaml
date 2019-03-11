@@ -84,7 +84,7 @@ delete_loisir:
     
 
 app_contact:
-    path: /create/contact
+    path: /crea/contact
     controller: App\Controller\ContactController::create
     
 valid_create_contact:

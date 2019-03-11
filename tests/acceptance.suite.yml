@@ -8,5 +8,5 @@ actor: AcceptanceTester
 modules:
     enabled:
         - PhpBrowser:
-            url: http://localhost:8000
+            url: https://symfony-daft.c9users.io/my_cv/public/index.php
         - \App\Tests\Helper\Acceptance
