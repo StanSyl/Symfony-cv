@@ -30,7 +30,7 @@ class LuckyController extends Controller
         return $this->render('lucky/number.html.twig', [
             'number' => $number,
             'name' => 'Jhon RAMBO',
-            'job' => 'Soldat Expérimenté',
+            'job' => 'Soldat expérimenté',
             'formations' => $forma,
             'experiences' => $exp,
             'loisirs' => $loi,

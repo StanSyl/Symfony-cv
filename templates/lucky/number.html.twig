@@ -19,21 +19,16 @@
 	
 	
 <nav id="menu">
-<ul>
-	<li><b id="pre" onmouseenter='changecoul()' onmouseleave='back()'><a>Présentation</a></b></li>
-	<li><b id="exp" onmouseenter='changecoul2()' onmouseleave='back2()'>Expériences professionnelles</b></li>
-	<li><b id="loi" onmouseenter='changecoul3()' onmouseleave='back3()'>Loisirs</b></li>
-	<li><b id="form" onmouseenter='changecoul4()' onmouseleave='back4()'>Formation</b></li>
-	<li><b id="api" onmouseenter='changecoul5()' onmouseleave='back5()'>Api</b></li>
-	<li><b id="cont" onmouseenter='changecoul6()' onmouseleave='back6()'>Contact</b></li>
+<ul id="centrer">
+	<li><b id="pre" onmouseenter='changecoul()' onmouseleave='back()'>Présentation</b></li>
+	<li><b id="exp" onmouseenter='changecoul2()' onmouseleave='back2()'><a href="{{ path('app_experience') }}">Expériences professionnelles</a></b></li>
+	<li><b id="loi" onmouseenter='changecoul3()' onmouseleave='back3()'><a href="{{ path('app_loisir') }}">Loisirs</a></b></li>
+	<li><b id="form" onmouseenter='changecoul4()' onmouseleave='back4()'><a href="{{ path('app_formation') }}">Formation</a></b></li>
+	<li><b id="api" onmouseenter='changecoul5()' onmouseleave='back5()'>API</b></li>
+	<li><b id="cont" onmouseenter='changecoul6()' onmouseleave='back6()'><a href="{{ path('app_contact') }}">Contact</a></b></li>
 	<li><b><a href="{{ path('app_lucky_connect') }}" id="co">Connexion</a></b></li>
 </ul>
 </nav>
-
-
-
-
-
 
 
 <div id="cv" class="instaFade">
@@ -49,7 +44,7 @@
 
 <div id="contactDetails" class="quickFade delayFour">
 	<ul>
-		<li>mail : jhon.rambo@gmail.com</li>
+		<li><b>mail : jhon.rambo@gmail.com</b></li>
 		<li>Retrouvé moi en Thailande, à la forge du village !</li>
 	</ul>
 </div>
@@ -80,11 +75,6 @@
 <section>
 	<div class="sectionTitle">
 		<h1 id="exp1" onmouseenter='changecoul2()' onmouseleave='back2()'>Expériences professionnelles</h1>
-		{% if is_granted('ROLE_ADMIN') == TRUE %}
-		<form action="{{ path('app_experience') }}">
-    		<input type="submit" value="Nouvelle expérience"/>
-		</form>
-		{% endif %}
 	</div>
 	
 	<div class="sectionContent">
@@ -104,7 +94,13 @@
 					</br>
 				{% endif %}
 	{% endfor %}
-	</p>	
+	
+	{% if is_granted('ROLE_ADMIN') == TRUE %}
+		<form action="{{ path('app_experience') }}">
+    		<input type="submit" value="Nouvelle expérience"/>
+		</form>
+	{% endif %}
+	</p>
 </div>
 	<div class="clear"></div>
 </section>
@@ -113,11 +109,6 @@
 <section>
 	<div class="sectionTitle">
 		<h1 id="loi1" onmouseenter='changecoul3()' onmouseleave='back3()'>Loisirs</h1>
-		{% if is_granted('ROLE_ADMIN') == TRUE %}
-		<form action="{{ path('app_loisir') }}">
-    		<input type="submit" value="Nouveau loisir"/>
-		</form>
-		{% endif %}
 	</div>
 	<div class="sectionContent">
 	<p>
@@ -132,6 +123,12 @@
 					</br>
  				{% endif %}
 	{% endfor %}
+	
+	{% if is_granted('ROLE_ADMIN') == TRUE %}
+		<form action="{{ path('app_loisir') }}">
+    		<input type="submit" value="Nouveau loisir"/>
+		</form>
+	{% endif %}
 		</p>
 	</div>
 	
@@ -142,11 +139,6 @@
 <section>
 	<div class="sectionTitle">
 		<h1 id="form1" onmouseenter='changecoul4()' onmouseleave='back4()'>Formation</h1>
-		{% if is_granted('ROLE_ADMIN') == TRUE %}
-		<form action="{{ path('app_formation') }}">
-    		<input type="submit" value="Nouvelle formation"/>
-		</form>
-		{% endif %}
 	</div>
 	
 	<div class="sectionContent">
@@ -165,6 +157,13 @@
 					</br>
 				{% endif %}
 		{% endfor %}
+		
+		{% if is_granted('ROLE_ADMIN') == TRUE %}
+		<form action="{{ path('app_formation') }}">
+    		<input type="submit" value="Nouvelle formation"/>
+		</form>
+		{% endif %}
+		
 		</p>
 		
 		

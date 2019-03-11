@@ -11,7 +11,7 @@ article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
 display:block;
 }
 
-html, body { font-family: 'Lato', helvetica, arial, sans-serif; font-size: 16px; color: #222;}
+html, body { font-family: 'Lato', helvetica, arial, sans-serif; font-size: 16px; color: #222; background-image: url("jungle.jpg"); background-repeat:no-repeat; background-size: cover; }
 
 .clear {clear: both;}
 
@@ -29,6 +29,7 @@ p {
 	background: #f3f3f3;
 	margin: 30px auto;
 	margin-top: 0;
+	margin-bottom: 0;
 }
 
 .mainDetails {
