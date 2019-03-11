@@ -4,7 +4,7 @@ Bonjour, vous êtes sur le projet 'CV Symfony'. Vous trouverez dans celui-ci tou
 
 ## Fonctionnalité
 
-Le bouton connection vous permet d'acceder au fonction d'édition. Vous pouvez ajouter, éditer ou supprimer une activité, une expériences professionnelles ou une formation.
+Le bouton connection vous permet d'acceder au fonction d'édition. Vous pouvez ajouter, éditer ou supprimer une activité, une expériences professionnelles ou une formation. Des boutons et le menu sont prévus à cet effet. 
 Une section contact permet également au visiteur de vous envoyer un message en base.
 
 

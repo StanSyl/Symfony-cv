@@ -5,7 +5,7 @@ security:
             memory: 
                 users:
                     admin:
-                        password: $2y$12$EUuKiS8NnjSTk7o1HMAJhOb3lniu.QFqfdipAz5FKMlPrSmEL9Zua 
+                        password: $2y$12$EUuKiS8NnjSTk7o1HMAJhOb3lniu.QFqfdipAz5FKMlPrSmEL9Zua #mdp : kitten
                         roles: 'ROLE_ADMIN'
                     
         
